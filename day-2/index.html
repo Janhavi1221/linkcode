@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="category.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<!-- header -->
+    <header>
+    <div class="nav-container">
+
+        <div class="logo">
+<img src="img/logo.png">
+        </div>
+        <div class="search">
+            <div class="search-container">
+
+                <input type="text" class="search-box" placeholder="search for products ,brands and more ">
+                <button class="search-btn">
+                
+                <svg width="24" height="24" class="" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><title>Search Icon</title><path d="M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z" stroke="#717478" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16 16L21 21" stroke="#717478" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </button>
+            </div>
+        </div>
+        <div class="user-profile" id="userProfile">
+            <a href="login.html" id="loginLink"><button>Login</button></a>
+        </div>
+        <a href="become-seller.html"><div class="become-seller" >
+            Become a Seller
+        </div></a>
+        <div class="more">
+            More
+            <div class="more-dropdown">
+                <a href="wishlist.html">
+                    <i class="far fa-heart"></i>
+                    <span>Wishlist</span>
+                </a>
+                <a href="#">
+                    <i class="fas fa-bell"></i>
+                    <span>Notification Preferences</span>
+                </a>
+                <a href="#">
+                    <i class="fas fa-question-circle"></i>
+                    <span>24x7 Customer Care</span>
+                </a>
+                <a href="#">
+                    <i class="fas fa-download"></i>
+                    <span>Download App</span>
+                </a>
+            </div>
+        </div>
+        <div class="cart">
+            <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/header_cart-43eb4e.svg" alt="Cart" class="cY_QA8" width="24" height="24">
+         Cart <span id="cart-count" class="cart-count">0</span></div>
+    </div>
+    </header>
+    
+    <!-- Categories Section -->
+    <div class="categories" id="categoriesContainer"></div>
+
+    <!-- Banner Section -->
+    <div class="section-2-container">
+        <img src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/f2b1cf2d2365fcf1.jpg?q=20" alt="Banner" class="banner-image">
+    </div>
+
+    <!-- Filters Section -->
+    <div class="filters-section">
+        <div class="filter-header">
+            <h2>Filters</h2>
+            <button onclick="clearAllFilters()" class="clear-filters">Clear All</button>
+        </div>
+        
+        <div class="filter-group">
+            <h3>Price Range</h3>
+            <div class="price-range">
+                <input type="range" id="priceRange" min="0" max="100000" value="100000" oninput="updatePriceFilter()">
+                <div class="price-display">
+                    <span>₹0 - ₹<span id="maxPrice">100000</span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="filter-group">
+            <h3>Sort By</h3>
+            <select id="sortSelect" onchange="sortProducts()">
+                <option value="relevant">Relevance</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="newest">Newest First</option>
+                <option value="discount">Discount</option>
+                <option value="rating">Customer Rating</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <h3>Categories</h3>
+            <div class="category-filters">
+                <label><input type="checkbox" value="mobile" onchange="filterProducts()"> Mobiles</label>
+                <label><input type="checkbox" value="laptop" onchange="filterProducts()"> Laptops</label>
+                <label><input type="checkbox" value="tv" onchange="filterProducts()"> TVs</label>
+                <label><input type="checkbox" value="fashion" onchange="filterProducts()"> Fashion</label>
+                <label><input type="checkbox" value="watch" onchange="filterProducts()"> Watches</label>
+                <label><input type="checkbox" value="headphone" onchange="filterProducts()"> Headphones</label>
+            </div>
+        </div>
+
+        <div class="filter-group">
+            <h3>Brands</h3>
+            <div class="brand-filters">
+                <label><input type="checkbox" value="Samsung" onchange="filterProducts()"> Samsung</label>
+                <label><input type="checkbox" value="Apple" onchange="filterProducts()"> Apple</label>
+                <label><input type="checkbox" value="OnePlus" onchange="filterProducts()"> OnePlus</label>
+                <label><input type="checkbox" value="Xiaomi" onchange="filterProducts()"> Xiaomi</label>
+                <label><input type="checkbox" value="Sony" onchange="filterProducts()"> Sony</label>
+                <label><input type="checkbox" value="LG" onchange="filterProducts()"> LG</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-section">
+        <input type="text" name="searchbar" id="searchbar" placeholder="Search for products, brands and more">
+        <button onclick="getClick()">Search</button>
+    </div>
+    
+    <!-- Products Container -->
+    <div id="container" class="product-container"></div>
+    <script>
+        
+        // Categories Data as JavaScript Objects
+        const categories = [
+            {
+                id: 1,
+                name: "Mobiles",
+                icon: "fas fa-mobile-alt",
+                value: "mobile"
+            },
+            {
+                id: 2,
+                name: "Laptops",
+                icon: "fas fa-laptop",
+                value: "laptop"
+            },
+            {
+                id: 3,
+                name: "TVs",
+                icon: "fas fa-tv",
+                value: "tv"
+            },
+            {
+                id: 4,
+                name: "Fashion",
+                icon: "fas fa-tshirt",
+                value: "fashion"
+            },
+            {
+                id: 5,
+                name: "Home",
+                icon: "fas fa-couch",
+                value: "home"
+            },
+            {
+                id: 6,
+                name: "Appliances",
+                icon: "fas fa-blender",
+                value: "appliances"
+            },
+            {
+                id: 7,
+                name: "Sports",
+                icon: "fas fa-football-ball",
+                value: "sports"
+            },
+            {
+                id: 8,
+                name: "Offers",
+                icon: "fas fa-gift",
+                value: "offers"
+            }
+        ];
+
+        // Function to render categories dynamically
+        function renderCategories() {
+            const categoriesContainer = document.getElementById('categoriesContainer');
+            categoriesContainer.innerHTML = '';
+            
+            categories.forEach(category => {
+                const categoryElement = document.createElement('div');
+                categoryElement.className = 'category-item';
+                categoryElement.innerHTML = `
+                    <i class="${category.icon}"></i>
+                    <span>${category.name}</span>
+                `;
+                categoryElement.onclick = () => filterByCategory(category.value);
+                categoriesContainer.appendChild(categoryElement);
+            });
+        }
+
+       
+        function filterByCategory(categoryValue) {
+           
+            document.querySelectorAll('.category-filters input:checked').forEach(cb => cb.checked = false);
+            
+            
+            const categoryCheckbox = document.querySelector(`.category-filters input[value="${categoryValue}"]`);
+            if (categoryCheckbox) {
+                categoryCheckbox.checked = true;
+            }
+            
+            filterProducts();
+        }
+
+        
+        const products = [
+            {
+                id: 1,
+                pname: "Samsung Galaxy S23 Ultra 5G",
+                price: 99999,
+                originalPrice: 124999,
+                comp: "Samsung",
+                category: "mobile",
+                image: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/j/7/f/-original-imahft5gfgwpt6pr.jpeg?q=70",
+                rating: 4.5,
+                reviews: 23456,
+                discount: 20,
+                delivery: "Free Delivery",
+                dateAdded: new Date('2024-01-15')
+            },
+            {
+                id: 2,
+                pname: "Apple iPhone 15 Pro Max",
+                price: 139999,
+                originalPrice: 159999,
+                comp: "Apple",
+                category: "mobile",
+                image: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/h/h/d/-original-imahft5gfgwpt6pr.jpeg?q=70",
+                rating: 4.8,
+                reviews: 45678,
+                discount: 13,
+                delivery: "Free Delivery",
+                dateAdded: new Date('2024-02-01')
+            },
+            {
+                id: 3,
+                pname: "OnePlus Watch 2 Pro",
+                price: 24999,
+                originalPrice: 29999,
+                comp: "OnePlus",
+                category: "watch",
+                image: "https://rukminim2.flixcart.com/image/612/612/xif0q/smartwatch/n/p/c/-original-imagycnnb6xygqmk.jpeg?q=70",
+                rating: 4.3,
+                reviews: 12345,
+                discount: 17,
+                delivery: "Free Delivery",
+                dateAdded: new Date('2024-01-20')
+            },
+            {
+                id: 4,
+                pname: "Apple AirPods Pro 2",
+                price: 19999,
+                originalPrice: 24999,
+                comp: "Apple",
+                category: "headphone",
+                image: "https://rukminim2.flixcart.com/image/612/612/xif0q/headphone/e/a/f/-original-imagtc44nk4b3hfg.jpeg?q=70",
+                rating: 4.6,
+                reviews: 34567,
+                discount: 20,
+                delivery: "Free Delivery",
+                dateAdded: new Date('2024-01-25')
+            },
+            {
+                id: 5,
+                pname: "Samsung 55\" 4K Smart TV",
+                price: 44999,
+                originalPrice: 59999,
+                comp: "Samsung",
+                category: "tv",
+                image: "https://rukminim2.flixcart.com/image/312/312/xif0q/television/a/w/u/-original-imaghy5gkqg7y4z9.jpeg?q=70",
+                rating: 4.4,
+                reviews: 8901,
+                discount: 25,
+                delivery: "Free Installation",
+                dateAdded: new Date('2024-02-05')
+            },
+            {
+                id: 6,
+                pname: "MacBook Air M2",
+                price: 99999,
+                originalPrice: 119999,
+                comp: "Apple",
+                category: "laptop",
+                image: "https://rukminim2.flixcart.com/image/312/312/xif0q/computer/x/g/t/-original-imagqkggfhfz6qpc.jpeg?q=70",
+                rating: 4.7,
+                reviews: 23456,
+                discount: 17,
+                delivery: "Free Delivery",
+                dateAdded: new Date('2024-02-10')
+            },
+            {
+                id: 7,
+                pname: "Xiaomi Redmi Note 13 Pro",
+                price: 21999,
+                originalPrice: 25999,
+                comp: "Xiaomi",
+                category: "mobile",
+                image: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/k/j/l/--original-imahfy3hzrvvggfh.jpeg?q=70",
+                rating: 4.2,
+                reviews: 15678,
+                discount: 15,
+                delivery: "Free Delivery",
+                dateAdded: new Date('2024-01-30')
+            },
+            {
+                id: 8,
+                pname: "Sony WH-1000XM5 Headphones",
+                price: 29999,
+                originalPrice: 34999,
+                comp: "Sony",
+                category: "headphone",
+                image: "https://rukminim2.flixcart.com/image/312/312/xif0q/headphone/d/n/c/-original-imagtc44nk4b3hfg.jpeg?q=70",
+                rating: 4.8,
+                reviews: 12345,
+                discount: 14,
+                delivery: "Free Delivery",
+                dateAdded: new Date('2024-02-08')
+            },
+            {
+                id: 9,
+                pname: "LG 43\" HD Smart TV",
+                price: 24999,
+                originalPrice: 32999,
+                comp: "LG",
+                category: "tv",
+                image: "https://rukminim2.flixcart.com/image/312/312/xif0q/television/a/w/u/-original-imaghy5gkqg7y4z9.jpeg?q=70",
+                rating: 4.1,
+                reviews: 5678,
+                discount: 24,
+                delivery: "Free Installation",
+                dateAdded: new Date('2024-01-28')
+            },
+            {
+                id: 10,
+                pname: "OnePlus 11 5G",
+                price: 56999,
+                originalPrice: 61999,
+                comp: "OnePlus",
+                category: "mobile",
+                image: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/j/7/f/-original-imahft5gfgwpt6pr.jpeg?q=70",
+                rating: 4.5,
+                reviews: 18901,
+                discount: 8,
+                delivery: "Free Delivery",
+                dateAdded: new Date('2024-02-03')
+            },
+            {
+                id: 11,
+                pname: "Samsung Galaxy Watch 6",
+                price: 19999,
+                originalPrice: 24999,
+                comp: "Samsung",
+                category: "watch",
+                image: "https://rukminim2.flixcart.com/image/612/612/xif0q/smartwatch/n/p/c/-original-imagycnnb6xygqmk.jpeg?q=70",
+                rating: 4.3,
+                reviews: 9876,
+                discount: 20,
+                delivery: "Free Delivery",
+                dateAdded: new Date('2024-01-22')
+            },
+            {
+                id: 12,
+                pname: "Dell Inspiron 15 Laptop",
+                price: 45999,
+                originalPrice: 55999,
+                comp: "Dell",
+                category: "laptop",
+                image: "https://rukminim2.flixcart.com/image/312/312/xif0q/computer/x/g/t/-original-imagqkggfhfz6qpc.jpeg?q=70",
+                rating: 4.0,
+                reviews: 6543,
+                discount: 18,
+                delivery: "Free Delivery",
+                dateAdded: new Date('2024-02-06')
+            }
+        ];
+
+        let filteredProducts = [...products];
+        let container = document.getElementById("container");
+
+        function display(list) {
+            container.innerHTML = "";
+
+            if (list.length === 0) {
+                container.innerHTML = `
+                    <div class="no-products">
+                        <i class="fas fa-search"></i>
+                        <h3>No products found</h3>
+                        <p>Try adjusting your filters or search terms</p>
+                    </div>
+                `;
+                return;
+            }
+
+            list.forEach(val => {
+                let div = document.createElement("div");
+                div.classList.add("product-card");
+                div.innerHTML = `
+                    <div class="product-image-container">
+                        <img src="${val.image}" alt="${val.pname}" class="product-image">
+                        <button class="wishlist-btn" data-product-id="${val.id}" data-product-name="${val.pname}" data-price="${val.price}" data-image="${val.image}">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">${val.pname}</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <span>${val.rating}</span>
+                            <span class="reviews">(${val.reviews.toLocaleString()})</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹${val.price.toLocaleString()}</span>
+                            <span class="original-price">₹${val.originalPrice.toLocaleString()}</span>
+                            <span class="discount">${val.discount}% off</span>
+                        </div>
+                        <div class="product-delivery">
+                            <i class="fas fa-truck"></i>
+                            <span>${val.delivery}</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart-btn" onclick="addToCart('${val.id}', '${val.pname}', '${val.price}', '${val.image}')">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+
+            updateWishlistButtons();
+        }
+
+        function getClick() {
+            let search = document.getElementById("searchbar").value.toLowerCase();
+            let filtered = products.filter((val) => {
+                return val.pname.toLowerCase().includes(search) ||
+                    val.comp.toLowerCase().includes(search) ||
+                    val.category.toLowerCase().includes(search);
+            });
+            filteredProducts = filtered;
+            display(filtered);
+        }
+
+        
+        function updatePriceFilter() {
+            const maxPrice = document.getElementById('priceRange').value;
+            document.getElementById('maxPrice').textContent = parseInt(maxPrice).toLocaleString();
+            filterProducts();
+        }
+
+       
+        function sortProducts() {
+            const sortValue = document.getElementById('sortSelect').value;
+            let sorted = [...filteredProducts];
+
+            switch (sortValue) {
+                case 'price-low':
+                    sorted.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price-high':
+                    sorted.sort((a, b) => b.price - a.price);
+                    break;
+                case 'newest':
+                    sorted.sort((a, b) => b.dateAdded - a.dateAdded);
+                    break;
+                case 'discount':
+                    sorted.sort((a, b) => b.discount - a.discount);
+                    break;
+                case 'rating':
+                    sorted.sort((a, b) => b.rating - a.rating);
+                    break;
+                default:
+                    sorted = [...filteredProducts];
+            }
+
+            display(sorted);
+        }
+
+        
+        function filterProducts() {
+            const maxPrice = parseInt(document.getElementById('priceRange').value);
+            const selectedCategories = Array.from(document.querySelectorAll('.category-filters input:checked')).map(cb => cb.value);
+            const selectedBrands = Array.from(document.querySelectorAll('.brand-filters input:checked')).map(cb => cb.value);
+
+            filteredProducts = products.filter(product => {
+                const priceMatch = product.price <= maxPrice;
+                const categoryMatch = selectedCategories.length === 0 || selectedCategories.includes(product.category);
+                const brandMatch = selectedBrands.length === 0 || selectedBrands.includes(product.comp);
+
+                return priceMatch && categoryMatch && brandMatch;
+            });
+
+            sortProducts();
+        }
+
+        
+        function clearAllFilters() {
+            document.getElementById('priceRange').value = 100000;
+            document.getElementById('maxPrice').textContent = '100000';
+            document.getElementById('sortSelect').value = 'relevant';
+
+            document.querySelectorAll('.category-filters input:checked').forEach(cb => cb.checked = false);
+            document.querySelectorAll('.brand-filters input:checked').forEach(cb => cb.checked = false);
+
+            filteredProducts = [...products];
+            display(products);
+        }
+
+        
+        function addToCart(id, name, price, image) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingItem = cart.find(item => item.id === id);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: id,
+                    name: name,
+                    price: parseInt(price),
+                    image: image,
+                    quantity: 1
+                });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            showNotification('Product added to cart!');
+        }
+
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const cartCountElement = document.getElementById('cart-count');
+
+            if (totalItems > 0) {
+                cartCountElement.textContent = totalItems;
+                cartCountElement.classList.add('show');
+            } else {
+                cartCountElement.textContent = '0';
+                cartCountElement.classList.remove('show');
+            }
+        }
+
+    
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                top: 80px;
+                right: 20px;
+                background: #388e3c;
+                color: white;
+                padding: 12px 20px;
+                border-radius: 4px;
+                z-index: 10000;
+                animation: slideIn 0.3s ease;
+            `;
+
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+
+        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        
+        function updateWishlistButtons() {
+            const wishlistButtons = document.querySelectorAll('.wishlist-btn');
+            wishlistButtons.forEach(btn => {
+                const productId = btn.dataset.productId;
+                const isInWishlist = wishlist.some(item => item.id === productId);
+                
+                if (isInWishlist) {
+                    btn.classList.add('active');
+                    btn.innerHTML = '<i class="fas fa-heart"></i>';
+                } else {
+                    btn.classList.remove('active');
+                    btn.innerHTML = '<i class="far fa-heart"></i>';
+                }
+            });
+        }
+        
+        function toggleWishlist(productId, productName, price, image) {
+            const existingIndex = wishlist.findIndex(item => item.id === productId);
+            
+            if (existingIndex > -1) {
+                wishlist.splice(existingIndex, 1);
+                showNotification('Removed from wishlist');
+            } else {
+                wishlist.push({
+                    id: productId,
+                    name: productName,
+                    price: parseInt(price),
+                    image: image
+                });
+                showNotification('Added to wishlist');
+            }
+            
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            updateWishlistButtons();
+        }
+        
+     
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.wishlist-btn')) {
+                const btn = e.target.closest('.wishlist-btn');
+                const productId = btn.dataset.productId;
+                const productName = btn.dataset.productName;
+                const price = btn.dataset.price;
+                const image = btn.dataset.image;
+                
+                toggleWishlist(productId, productName, price, image);
+            }
+        });
+
+        
+        document.getElementById('searchbar').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                getClick();
+            }
+        });
+
+      
+        renderCategories();
+        updateCartCount();
+        display(products);
+</script>
+</body>
+</html>
