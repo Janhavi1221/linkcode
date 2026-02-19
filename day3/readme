@@ -1,1 +1,70 @@
-hi
+# 🏰 Majestic Forts of Pune
+
+A responsive and informative **frontend website** showcasing the historic forts around Pune, Maharashtra.  
+This project highlights the **Maratha heritage**, famous forts, trekking information, and visitor guidance.
+
+---
+
+## ✨ Project Overview
+The **Pune Forts Explorer** website is designed to educate and inspire users to explore the majestic forts built during the Maratha Empire.  
+It presents historical significance, locations, trekking tips, and featured forts in a clean and modern UI.
+
+---
+
+## 🌟 Features
+- Hero section with Maratha heritage theme
+- Featured forts with images and descriptions
+- Individual fort explore pages (Sinhgad, Lohagad, Purandar, etc.)
+- Trekking & visitor guide section
+- Historical and cultural information
+- Responsive and user-friendly design
+- Clean layout using pure HTML & CSS
+
+---
+
+## 🛠️ Technologies Used
+- HTML5
+- CSS3
+- Responsive Web Design
+
+---
+
+## 📂 Project Structure
+├── index.html
+├── style.css
+├── sinhgad.jpg
+├── Lohagad-Fort.jpg
+├── purandar.jpg
+├── malhargad.jpg
+├── rajmachi.jpg
+├── index2.html
+├── index3.html
+├── index4.html
+├── index5.html
+└── README.md
+
+---
+
+## 🚀 How to Run the Project
+1. Download or clone the repository
+2. Open `index.html` in any modern web browser
+3. Click on **Explore Fort** buttons to view individual fort pages
+
+---
+
+## 🥾 Best Use Case
+- Educational project
+- College assignment
+- Heritage & tourism website demo
+- HTML/CSS practice project
+
+---
+
+## 👩‍💻 Author
+**Janhavi Bhosale**
+
+---
+
+## 📜 Disclaimer
+This project is created for **educational and learning purposes only**.  
+All historical references are for informational use and images belong to their respective owners.
