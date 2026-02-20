@@ -1,0 +1,62 @@
+<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="desert" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F4E4C1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D2B48C;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFE4B5;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky background -->
+  <rect width="400" height="120" fill="url(#sky)"/>
+  
+  <!-- Desert dunes -->
+  <path d="M 0 120 Q 100 100 200 110 T 400 100 L 400 200 L 0 200 Z" fill="url(#desert)"/>
+  <path d="M 0 140 Q 150 120 300 130 L 400 125 L 400 200 L 0 200 Z" fill="#D2B48C" opacity="0.7"/>
+  
+  <!-- Camel with rider -->
+  <g transform="translate(150, 130)">
+    <!-- Camel body -->
+    <ellipse cx="0" cy="0" rx="25" ry="15" fill="#D2691E"/>
+    <!-- Humps -->
+    <ellipse cx="-8" cy="-10" rx="8" ry="12" fill="#D2691E"/>
+    <ellipse cx="8" cy="-8" rx="8" ry="10" fill="#D2691E"/>
+    <!-- Neck and head -->
+    <rect x="20" y="-5" width="15" height="8" fill="#D2691E"/>
+    <ellipse cx="35" cy="-8" rx="8" ry="6" fill="#D2691E"/>
+    <!-- Legs -->
+    <rect x="-15" y="10" width="4" height="15" fill="#8B4513"/>
+    <rect x="-5" y="10" width="4" height="15" fill="#8B4513"/>
+    <rect x="5" y="10" width="4" height="15" fill="#8B4513"/>
+    <rect x="15" y="10" width="4" height="15" fill="#8B4513"/>
+    
+    <!-- Rider -->
+    <circle cx="0" cy="-20" r="5" fill="#F4A460"/>
+    <rect x="-3" y="-15" width="6" height="8" fill="#FF6347"/>
+  </g>
+  
+  <!-- Fort in background -->
+  <g transform="translate(300, 90)" opacity="0.8">
+    <rect x="-20" y="0" width="40" height="30" fill="#8B7355"/>
+    <rect x="-15" y="-10" width="30" height="10" fill="#A0522D"/>
+    <rect x="-5" y="5" width="10" height="15" fill="#654321"/>
+    <rect x="-18" y="15" width="6" height="15" fill="#654321"/>
+    <rect x="12" y="15" width="6" height="15" fill="#654321"/>
+  </g>
+  
+  <!-- Sun -->
+  <circle cx="350" cy="40" r="20" fill="#FFD700" opacity="0.9"/>
+  
+  <!-- Cactus -->
+  <g transform="translate(50, 140)">
+    <rect x="-2" y="0" width="4" height="20" fill="#228B22"/>
+    <rect x="-8" y="5" width="4" height="8" fill="#228B22"/>
+    <rect x="4" y="8" width="4" height="6" fill="#228B22"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="200" y="190" text-anchor="middle" fill="#8B4513" font-family="Arial" font-size="12" font-weight="bold">Rajasthan Desert Safari</text>
+</svg>

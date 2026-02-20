@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itinerary - TripCraft AI Travel Planner</title>
+    <meta name="description" content="View and manage your detailed travel itinerary with day-by-day planning">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✈️</text></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">✈️</div>
+                TripCraft
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li><a href="itinerary.html" class="nav-link">Itinerary</a></li>
+                <li><a href="budget.html" class="nav-link">Budget</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="#" class="btn btn-primary" onclick="addActivity()">+ Add Activity</a></li>
+            </ul>
+            
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Itinerary Header -->
+    <section class="dashboard-header">
+        <div class="container">
+            <div class="welcome-section">
+                <h1 class="welcome-title">Incredible India Journey 🇮🇳</h1>
+                <p class="welcome-subtitle">March 15-22, 2024 • 7 Days • AI-Optimized Cultural Experience</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Itinerary Content -->
+    <main class="itinerary-container">
+        <div class="container">
+            <!-- Trip Overview -->
+            <section style="margin-bottom: 3rem;">
+                <div style="margin-bottom: 2rem; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-xl);">
+                    <img src="https://picsum.photos/seed/india-golden-triangle/1200/400.jpg" alt="India Golden Triangle Tour" style="width: 100%; height: 300px; object-fit: cover;">
+                    <div style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); padding: 2rem; margin-top: -100px; position: relative;">
+                        <h2 style="color: white; font-size: 2rem; margin-bottom: 0.5rem;">Golden Triangle Experience</h2>
+                        <p style="color: rgba(255,255,255,0.9);">Delhi • Agra • Jaipur - The Heart of India</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
+                        <div>
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🇮🇳</div>
+                            <div style="font-weight: 600; color: var(--primary-color);">Delhi, Agra & Jaipur</div>
+                            <div style="color: var(--text-light); font-size: 0.875rem;">Golden Triangle Circuit</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📅</div>
+                            <div style="font-weight: 600; color: var(--primary-color);">7 Days</div>
+                            <div style="color: var(--text-light); font-size: 0.875rem;">Duration</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🕌</div>
+                            <div style="font-weight: 600; color: var(--primary-color);">Historical Monuments</div>
+                            <div style="color: var(--text-light); font-size: 0.875rem;">UNESCO World Heritage Sites</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">⭐</div>
+                            <div style="font-weight: 600; color: var(--primary-color);">95% Match</div>
+                            <div style="color: var(--text-light); font-size: 0.875rem;">AI Score</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Timeline Itinerary -->
+            <section class="timeline">
+                <!-- Day 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="day-header">
+                                <div class="day-number">Day 1</div>
+                                <div>
+                                    <h3 style="color: var(--text-dark); margin-bottom: 0.25rem;">Arrival in Delhi & Old City Exploration</h3>
+                                    <p style="color: var(--text-light); font-size: 0.9rem;">Friday, March 15, 2024</p>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-bottom: 1.5rem; border-radius: 12px; overflow: hidden;">
+                                <img src="https://picsum.photos/seed/delhi-india-gate/800/400.jpg" alt="India Gate Delhi" style="width: 100%; height: 200px; object-fit: cover;">
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">✈️</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Airport Arrival</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Indira Gandhi Airport • 10:00 AM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Immigration, baggage claim, and prepaid SIM pickup</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">🚇</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Transfer to Hotel</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Airport Express • 12:00 PM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Metro to Connaught Place (45 minutes)</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">🏨</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Hotel Check-in</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">The Imperial Hotel • 2:00 PM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Connaught Place, heritage luxury accommodation</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">🌸</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">India Gate</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Rajpath • 4:00 PM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Iconic war memorial, evening light show, street food</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">🍜</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Dinner at Karim's</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Jama Masjid area • 7:00 PM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Legendary Mughal cuisine, since 1913</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="day-header">
+                                <div class="day-number">Day 2</div>
+                                <div>
+                                    <h3 style="color: var(--text-dark); margin-bottom: 0.25rem;">Historic Delhi & Mughal Heritage</h3>
+                                    <p style="color: var(--text-light); font-size: 0.9rem;">Saturday, March 16, 2024</p>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-bottom: 1.5rem; border-radius: 12px; overflow: hidden;">
+                                <img src="https://picsum.photos/seed/red-fort-delhi/800/400.jpg" alt="Red Fort Delhi" style="width: 100%; height: 200px; object-fit: cover;">
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">⛩️</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Red Fort</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Old Delhi • 9:00 AM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">UNESCO World Heritage site, Mughal architecture</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">🚢</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Jama Masjid</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Old Delhi • 11:00 AM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">India's largest mosque, stunning architecture</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">🍱</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Traditional Lunch</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Chandni Chowk • 1:00 PM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Authentic street food tour and local delicacies</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">🗼</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Qutub Minar</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Mehrauli • 3:00 PM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">73m tall minaret, ancient Islamic architecture</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">🍶</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Cultural Evening</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Connaught Place • 7:00 PM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Live classical music performance and dinner</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <!-- Day 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="day-header">
+                                <div class="day-number">Day 3</div>
+                                <div>
+                                    <h3 style="color: var(--text-dark); margin-bottom: 0.25rem;">Travel to Agra & Taj Mahal</h3>
+                                    <p style="color: var(--text-light); font-size: 0.9rem;">Sunday, March 17, 2024</p>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-bottom: 1.5rem; border-radius: 12px; overflow: hidden;">
+                                <img src="https://picsum.photos/seed/taj-mahal-sunrise/800/400.jpg" alt="Taj Mahal Sunrise" style="width: 100%; height: 200px; object-fit: cover;">
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">🤖</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Train to Agra</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Hazrat Nizamuddin Station • 7:00 AM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Gatimaan Express - India's fastest train</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">🛍️</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Taj Mahal Sunrise</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Agra • 10:00 AM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Wonder of the world, marble mausoleum</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">🍣</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Agra Fort</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Agra • 1:00 PM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">UNESCO site, former Mughal empire capital</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">🌃</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Mehtab Bagh</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Agra • 5:00 PM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Sunset view of Taj Mahal from across Yamuna river</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <!-- Day 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="day-header">
+                                <div class="day-number">Day 4</div>
+                                <div>
+                                    <h3 style="color: var(--text-dark); margin-bottom: 0.25rem;">Jaipur - The Pink City</h3>
+                                    <p style="color: var(--text-light); font-size: 0.9rem;">Monday, March 18, 2024</p>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-bottom: 1.5rem; border-radius: 12px; overflow: hidden;">
+                                <img src="https://picsum.photos/seed/jaipur-pink-city/800/400.jpg" alt="Pink City Jaipur" style="width: 100%; height: 200px; object-fit: cover;">
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">🏛️</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Travel to Jaipur</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Agra • 8:00 AM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Scenic drive through Rajasthan countryside</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">🌸</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">City Palace</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Old Jaipur • 11:00 AM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Royal residence, museums, Rajput architecture</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">🎨</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Rajasthani Lunch</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">City Palace • 1:00 PM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Traditional thali, local delicacies</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">🍱</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Hawa Mahal</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Old Jaipur • 3:00 PM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Palace of winds, intricate honeycomb facade</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <!-- Day 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="day-header">
+                                <div class="day-number">Day 5</div>
+                                <div>
+                                    <h3 style="color: var(--text-dark); margin-bottom: 0.25rem;">Amber Fort & Elephant Ride</h3>
+                                    <p style="color: var(--text-light); font-size: 0.9rem;">Tuesday, March 19, 2024</p>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-bottom: 1.5rem; border-radius: 12px; overflow: hidden;">
+                                <img src="https://picsum.photos/seed/amber-fort-elephant/800/400.jpg" alt="Amber Fort Elephant Ride" style="width: 100%; height: 200px; object-fit: cover;">
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">🚆</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Amber Fort</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Jaipur • 8:00 AM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Majestic hilltop fortress, elephant ascent</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">🗻</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Elephant Safari</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Amber Fort • 10:00 AM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Traditional elephant ride to fort entrance</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">♨️</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Jantar Mantar</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Old Jaipur • 2:00 PM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Ancient astronomical observatory</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">🏨</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Traditional Rajasthani Dinner</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Jaipur • 7:00 PM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Folk dance performance and royal cuisine</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <!-- Day 6 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="day-header">
+                                <div class="day-number">Day 6</div>
+                                <div>
+                                    <h3 style="color: var(--text-dark); margin-bottom: 0.25rem;">Local Markets & Crafts</h3>
+                                    <p style="color: var(--text-light); font-size: 0.9rem;">Wednesday, March 20, 2024</p>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-bottom: 1.5rem; border-radius: 12px; overflow: hidden;">
+                                <img src="https://picsum.photos/seed/jaipur-markets-crafts/800/400.jpg" alt="Jaipur Markets Crafts" style="width: 100%; height: 200px; object-fit: cover;">
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">🎌</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Johari Bazaar</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Old Jaipur • 9:00 AM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Traditional jewelry market, gemstone shopping</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">🛍️</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Blue Pottery Workshop</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Jaipur • 11:00 AM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Hands-on pottery making, traditional craft</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">🎮</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Textile Shopping</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Bapu Bazaar • 2:00 PM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Rajasthani fabrics, block printing, handicrafts</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">🍢</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Rajasthani Cuisine</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Jaipur • 7:00 PM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Laal Maas, Gatte ki Sabzi, traditional sweets</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <!-- Day 7 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="day-header">
+                                <div class="day-number">Day 7</div>
+                                <div>
+                                    <h3 style="color: var(--text-dark); margin-bottom: 0.25rem;">Departure from Delhi</h3>
+                                    <p style="color: var(--text-light); font-size: 0.9rem;">Thursday, March 21, 2024</p>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-bottom: 1.5rem; border-radius: 12px; overflow: hidden;">
+                                <img src="https://picsum.photos/seed/delhi-airport-departure/800/400.jpg" alt="Delhi Airport Departure" style="width: 100%; height: 200px; object-fit: cover;">
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">🛍️</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Return to Delhi</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Jaipur • 8:00 AM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Scenic flight back to capital city</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">☕</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Final Indian Breakfast</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Delhi • 11:00 AM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">South Indian breakfast with dosa and idli</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">🚇</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Airport Transfer</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Delhi • 1:00 PM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Metro to Indira Gandhi Airport</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">✈️</div>
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">Departure</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Indira Gandhi Airport • 4:00 PM</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Flight home with incredible memories of India</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </section>
+
+            <!-- AI Suggestions -->
+            <section style="margin-top: 3rem;">
+                <h2 style="font-size: 2rem; margin-bottom: 2rem; color: var(--text-dark); text-align: center;">AI Optimization Tips</h2>
+                <div class="trip-summary-grid">
+                    <div class="card">
+                        <div class="card-icon">⏰</div>
+                        <h3 class="card-title">Timing Optimization</h3>
+                        <p class="card-description">
+                            Visit popular attractions early morning or late evening to avoid crowds. 
+                            Senso-ji Temple is best before 9 AM.
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">💰</div>
+                        <h3 class="card-title">Perfect Match: Varanasi</h3>
+                        <p class="card-description">
+                            Based on your interest in cultural experiences, 
+                            Varanasi would be an amazing spiritual addition to your India journey.
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">📸</div>
+                        <h3 class="card-title">Best Time to Visit</h3>
+                        <p class="card-description">
+                            October-March is perfect for North India! Expect pleasant weather 
+                            and amazing festival seasons.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Add Activity Modal -->
+    <div id="addActivityModal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: 2000; align-items: center; justify-content: center;">
+        <div class="card" style="max-width: 500px; width: 90%; max-height: 90vh; overflow-y: auto;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h2 style="color: var(--text-dark);">Add New Activity</h2>
+                <button onclick="closeAddActivityModal()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-light);">×</button>
+            </div>
+            
+            <form id="addActivityForm">
+                <div class="form-group">
+                    <label class="form-label">Activity Name</label>
+                    <input type="text" class="form-input" name="activityName" placeholder="e.g., Visit Tokyo Tower" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Day</label>
+                    <select class="form-input" name="day" required>
+                        <option value="">Select day</option>
+                        <option value="1">Day 1</option>
+                        <option value="2">Day 2</option>
+                        <option value="3">Day 3</option>
+                        <option value="4">Day 4</option>
+                        <option value="5">Day 5</option>
+                        <option value="6">Day 6</option>
+                        <option value="7">Day 7</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Time</label>
+                    <input type="time" class="form-input" name="time" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Location</label>
+                    <input type="text" class="form-input" name="location" placeholder="e.g., Shibuya" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Activity Type</label>
+                    <select class="form-input" name="type" required>
+                        <option value="">Select type</option>
+                        <option value="transport">🚇 Transport</option>
+                        <option value="accommodation">🏨 Accommodation</option>
+                        <option value="food">🍜 Food</option>
+                        <option value="activity">🎯 Activity</option>
+                        <option value="shopping">🛍️ Shopping</option>
+                        <option value="culture">🏛️ Culture</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-textarea" name="description" placeholder="Add details about this activity..." rows="3"></textarea>
+                </div>
+                
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <button type="button" onclick="closeAddActivityModal()" class="btn btn-secondary" style="flex: 1;">Cancel</button>
+                    <button type="submit" class="btn btn-primary" style="flex: 1;">Add Activity</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TripCraft</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
+                        Your AI-powered travel companion for creating unforgettable journeys.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="itinerary.html">Itinerary Planner</a></li>
+                        <li><a href="budget.html">Budget Tracker</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#tutorials">Tutorials</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#feedback">Feedback</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="#facebook">Facebook</a></li>
+                        <li><a href="#twitter">Twitter</a></li>
+                        <li><a href="#instagram">Instagram</a></li>
+                        <li><a href="#linkedin">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 TripCraft AI Travel Planner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Modal functions
+        function addActivity() {
+            document.getElementById('addActivityModal').style.display = 'flex';
+        }
+        
+        function closeAddActivityModal() {
+            document.getElementById('addActivityModal').style.display = 'none';
+        }
+        
+        // Handle add activity form submission
+        document.getElementById('addActivityForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const activityData = Object.fromEntries(formData);
+            
+            // Show success message
+            alert('Activity added successfully!');
+            
+            // Close modal and reset form
+            closeAddActivityModal();
+            this.reset();
+            
+            // In a real app, you would add this to the itinerary
+            console.log('New activity:', activityData);
+        });
+        
+        // Close modal when clicking outside
+        document.getElementById('addActivityModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeAddActivityModal();
+            }
+        });
+        
+        // Make activities editable (frontend only)
+        document.querySelectorAll('.activity-item').forEach(item => {
+            item.addEventListener('dblclick', function() {
+                const content = this.querySelector('div:nth-child(2)');
+                if (content) {
+                    const isEditing = content.contentEditable === 'true';
+                    content.contentEditable = !isEditing;
+                    
+                    if (!isEditing) {
+                        content.focus();
+                        content.style.backgroundColor = '#f0f9ff';
+                        content.style.padding = '0.5rem';
+                        content.style.borderRadius = '4px';
+                    } else {
+                        content.style.backgroundColor = '';
+                        content.style.padding = '';
+                        content.style.borderRadius = '';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

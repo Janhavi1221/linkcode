@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - TripCraft AI Travel Planner</title>
+    <meta name="description" content="Manage your trips, view itineraries, and track your travel budget">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✈️</text></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">✈️</div>
+                TripCraft
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li><a href="itinerary.html" class="nav-link">Itinerary</a></li>
+                <li><a href="budget.html" class="nav-link">Budget</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="#" class="btn btn-primary" onclick="createNewTripModal()">+ New Trip</a></li>
+            </ul>
+            
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Header -->
+    <section class="dashboard-header">
+        <div class="container">
+            <div class="welcome-section">
+                <h1 class="welcome-title">Welcome back, Traveler! 🌍</h1>
+                <p class="welcome-subtitle">Ready to plan your next adventure? Your AI travel assistant is here to help.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Dashboard Content -->
+    <main class="container" style="padding: 40px 0 80px;">
+        <!-- Quick Stats -->
+        <div class="trip-summary-grid">
+            <div class="summary-card">
+                <div class="summary-value">3</div>
+                <div class="summary-label">Active Trips</div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-value">12</div>
+                <div class="summary-label">Destinations Visited</div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-value">$2,450</div>
+                <div class="summary-label">Total Budget Saved</div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-value">28</div>
+                <div class="summary-label">Days Traveled</div>
+            </div>
+        </div>
+
+        <!-- Create New Trip Button -->
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <button class="btn btn-primary" onclick="createNewTripModal()" style="font-size: 1.1rem; padding: 16px 32px;">
+                <span>✨</span> Create New Trip
+            </button>
+        </div>
+
+        <!-- Current Trips -->
+        <section style="margin-bottom: 3rem;">
+            <h2 style="font-size: 2rem; margin-bottom: 2rem; color: var(--text-dark);">Your Current Trips</h2>
+            <div class="trip-summary-grid">
+                <div class="card">
+                    <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 120px;">
+                        <img src="assets/images/taj-mahal.jpg" alt="India Golden Triangle" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                        <div>
+                            <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Incredible India Journey</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">March 15-22, 2024</p>
+                        </div>
+                        <span style="background: #10b981; color: white; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.8rem;">Active</span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                        <div>
+                            <span style="color: var(--text-light); font-size: 0.875rem;">Destination</span>
+                            <div style="font-weight: 600;">Delhi, Agra, Jaipur</div>
+                        </div>
+                        <div>
+                            <span style="color: var(--text-light); font-size: 0.875rem;">Duration</span>
+                            <div style="font-weight: 600;">7 Days</div>
+                        </div>
+                        <div>
+                            <span style="color: var(--text-light); font-size: 0.875rem;">Budget</span>
+                            <div style="font-weight: 600;">$3,500</div>
+                        </div>
+                        <div>
+                            <span style="color: var(--text-light); font-size: 0.875rem;">Progress</span>
+                            <div style="font-weight: 600;">75% Planned</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <a href="itinerary.html" class="btn btn-outline" style="flex: 1;">View Itinerary</a>
+                        <a href="budget.html" class="btn btn-outline" style="flex: 1;">Budget</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 120px;">
+                        <img src="assets/images/eiffel-tower.jpg" alt="Paris Eiffel Tower" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                        <div>
+                            <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Paris Getaway</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">May 10-17, 2024</p>
+                        </div>
+                        <span style="background: #f59e0b; color: white; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.8rem;">Planning</span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                        <div>
+                            <span style="color: var(--text-light); font-size: 0.875rem;">Destination</span>
+                            <div style="font-weight: 600;">Paris, France</div>
+                        </div>
+                        <div>
+                            <span style="color: var(--text-light); font-size: 0.875rem;">Duration</span>
+                            <div style="font-weight: 600;">7 Days</div>
+                        </div>
+                        <div>
+                            <span style="color: var(--text-light); font-size: 0.875rem;">Budget</span>
+                            <div style="font-weight: 600;">$4,200</div>
+                        </div>
+                        <div>
+                            <span style="color: var(--text-light); font-size: 0.875rem;">Progress</span>
+                            <div style="font-weight: 600;">30% Planned</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <a href="itinerary.html" class="btn btn-outline" style="flex: 1;">View Itinerary</a>
+                        <a href="budget.html" class="btn btn-outline" style="flex: 1;">Budget</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 120px;">
+                        <img src="assets/images/bali-beach.jpg" alt="Bali Tropical Beach" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                        <div>
+                            <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Bali Retreat</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">July 5-15, 2024</p>
+                        </div>
+                        <span style="background: #6b7280; color: white; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.8rem;">Upcoming</span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                        <div>
+                            <span style="color: var(--text-light); font-size: 0.875rem;">Destination</span>
+                            <div style="font-weight: 600;">Bali, Indonesia</div>
+                        </div>
+                        <div>
+                            <span style="color: var(--text-light); font-size: 0.875rem;">Duration</span>
+                            <div style="font-weight: 600;">10 Days</div>
+                        </div>
+                        <div>
+                            <span style="color: var(--text-light); font-size: 0.875rem;">Budget</span>
+                            <div style="font-weight: 600;">$2,800</div>
+                        </div>
+                        <div>
+                            <span style="color: var(--text-light); font-size: 0.875rem;">Progress</span>
+                            <div style="font-weight: 600;">10% Planned</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <a href="itinerary.html" class="btn btn-outline" style="flex: 1;">View Itinerary</a>
+                        <a href="budget.html" class="btn btn-outline" style="flex: 1;">Budget</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Explore More Itineraries -->
+        <section style="margin-bottom: 3rem;">
+            <h2 style="font-size: 2rem; margin-bottom: 2rem; color: var(--text-dark); text-align: center;">Explore More Itineraries</h2>
+            <div class="trip-summary-grid">
+                <div class="card">
+                    <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 120px;">
+                        <img src="assets/images/kerala-backwaters.jpg" alt="Kerala Backwaters" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Kerala Backwaters Bliss</h3>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">5 Days • Alleppey • Houseboat Experience</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin: 1rem 0;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Budget</div>
+                            <div style="font-weight: 600;">$1,200</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Best Season</div>
+                            <div style="font-weight: 600;">Oct-Feb</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="margin-top: 1rem; width: 100%;">View Itinerary</button>
+                </div>
+
+                <div class="card">
+                    <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 120px;">
+                        <img src="assets/images/taj-mahal.jpg" alt="Rajasthan Desert Safari" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Rajasthan Desert Safari</h3>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">6 Days • Jaisalmer • Desert Adventure</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin: 1rem 0;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Budget</div>
+                            <div style="font-weight: 600;">$1,800</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Best Season</div>
+                            <div style="font-weight: 600;">Nov-Mar</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="margin-top: 1rem; width: 100%;">View Itinerary</button>
+                </div>
+
+                <div class="card">
+                    <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 120px;">
+                        <img src="assets/images/route-66.jpg" alt="Himalayan Trekking" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Himalayan Trekking Adventure</h3>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">8 Days • Manali • Mountain Trek</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin: 1rem 0;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Budget</div>
+                            <div style="font-weight: 600;">$2,500</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Best Season</div>
+                            <div style="font-weight: 600;">May-Jun</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="margin-top: 1rem; width: 100%;">View Itinerary</button>
+                </div>
+
+                <div class="card">
+                    <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 120px;">
+                        <img src="assets/images/bali-beach.jpg" alt="Goa Beaches" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Goa Beach Paradise</h3>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">4 Days • North Goa • Beach Relaxation</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin: 1rem 0;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Budget</div>
+                            <div style="font-weight: 600;">$900</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Best Season</div>
+                            <div style="font-weight: 600;">Nov-Feb</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="margin-top: 1rem; width: 100%;">View Itinerary</button>
+                </div>
+
+                <div class="card">
+                    <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 120px;">
+                        <img src="assets/images/kerala-backwaters.jpg" alt="Varanasi Spiritual" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Varanasi Spiritual Journey</h3>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">3 Days • Varanasi • Ganges Experience</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin: 1rem 0;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Budget</div>
+                            <div style="font-weight: 600;">$600</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Best Season</div>
+                            <div style="font-weight: 600;">Oct-Mar</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="margin-top: 1rem; width: 100%;">View Itinerary</button>
+                </div>
+
+                <div class="card">
+                    <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 120px;">
+                        <img src="assets/images/taj-mahal.jpg" alt="Ladakh Monasteries" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Ladakh Monastery Tour</h3>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">7 Days • Leh • Buddhist Culture</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin: 1rem 0;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Budget</div>
+                            <div style="font-weight: 600;">$2,200</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Best Season</div>
+                            <div style="font-weight: 600;">Jun-Sep</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="margin-top: 1rem; width: 100%;">View Itinerary</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Recommendations -->
+        <section style="margin-bottom: 3rem;">
+            <h2 style="font-size: 2rem; margin-bottom: 2rem; color: var(--text-dark);">AI Recommendations for You</h2>
+            <div class="trip-summary-grid">
+                <div class="card">
+                    <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 120px;">
+                        <img src="assets/images/kerala-backwaters.jpg" alt="Kyoto Temple" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="card-icon">🎯</div>
+                    <h3 class="card-title">Perfect Match: Varanasi</h3>
+                    <p class="card-description">
+                        Based on your interest in cultural experiences, 
+                        Varanasi would be an amazing spiritual addition to your India journey.
+                    </p>
+                    <button class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Explore Varanasi</button>
+                </div>
+
+                <div class="card">
+                    <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 120px;">
+                        <img src="assets/images/route-66.jpg" alt="Money Saving Travel" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="card-icon">💡</div>
+                    <h3 class="card-title">Money-Saving Tip</h3>
+                    <p class="card-description">
+                        Book your train tickets 30 days in advance to save 
+                        up to 40% on Indian Railways fares.
+                    </p>
+                    <button class="btn btn-secondary" style="margin-top: 1rem; width: 100%;">Learn More</button>
+                </div>
+
+                <div class="card">
+                    <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 120px;">
+                        <img src="assets/images/bali-beach.jpg" alt="Bali Surfing Beach" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="card-icon">📅</div>
+                    <h3 class="card-title">Best Time to Visit India</h3>
+                    <p class="card-description">
+                        October-March is perfect for North India! Expect pleasant weather 
+                        and amazing festival seasons.
+                    </p>
+                    <button class="btn btn-outline" style="margin-top: 1rem; width: 100%;">View Calendar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Activity -->
+        <section>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem; color: var(--text-dark);">Recent Activity</h2>
+            <div class="card">
+                <div style="margin-bottom: 1rem;">
+                <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--border-color);">
+                        <div style="width: 40px; height: 40px; background: var(--gradient-hero); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">📝</div>
+                        <div style="flex: 1;">
+                            <div style="font-weight: 600;">Itinerary updated for Tokyo Adventure</div>
+                            <div style="color: var(--text-light); font-size: 0.875rem;">Added 3 new activities in Shibuya</div>
+                        </div>
+                </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--border-color);">
+                    </div>
+
+                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--border-color);">
+                        <div style="width: 40px; height: 40px; background: var(--gradient-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">💰</div>
+                        <div style="flex: 1;">
+                            <div style="font-weight: 600;">Budget optimized for Paris Getaway</div>
+                            <div style="color: var(--text-light); font-size: 0.875rem;">AI found $350 in potential savings</div>
+                        </div>
+                        <div style="color: var(--text-light); font-size: 0.875rem;">5 hours ago</div>
+                    </div>
+
+                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem 0;">
+                        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">🎉</div>
+                        <div style="flex: 1;">
+                            <div style="font-weight: 600;">New trip created: Bali Retreat</div>
+                            <div style="color: var(--text-light); font-size: 0.875rem;">10-day tropical adventure planned</div>
+                        </div>
+                        <div style="color: var(--text-light); font-size: 0.875rem;">1 day ago</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- New Trip Modal -->
+    <div id="newTripModal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: 2000; align-items: center; justify-content: center;">
+        <div class="card" style="max-width: 500px; width: 90%; max-height: 90vh; overflow-y: auto;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h2 style="color: var(--text-dark);">Create New Trip</h2>
+                <button onclick="closeNewTripModal()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-light);">×</button>
+            </div>
+            
+            <form id="newTripForm">
+                <div class="form-group">
+                    <label class="form-label">Trip Name</label>
+                    <input type="text" class="form-input" name="tripName" placeholder="e.g., Summer Vacation 2024" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Destination</label>
+                    <input type="text" class="form-input" name="destination" placeholder="e.g., Rome, Italy" required>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label class="form-label">Start Date</label>
+                        <input type="date" class="form-input" name="startDate" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">End Date</label>
+                        <input type="date" class="form-input" name="endDate" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Budget ($)</label>
+                    <input type="number" class="form-input" name="budget" placeholder="e.g., 3000" min="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Travel Style</label>
+                    <select class="form-input" name="travelStyle">
+                        <option value="">Select travel style</option>
+                        <option value="adventure">Adventure</option>
+                        <option value="relaxation">Relaxation</option>
+                        <option value="cultural">Cultural</option>
+                        <option value="luxury">Luxury</option>
+                        <option value="budget">Budget</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Number of Travelers</label>
+                    <input type="number" class="form-input" name="travelers" placeholder="e.g., 2" min="1" value="1" required>
+                </div>
+                
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <button type="button" onclick="closeNewTripModal()" class="btn btn-secondary" style="flex: 1;">Cancel</button>
+                    <button type="submit" class="btn btn-primary" style="flex: 1;">Create Trip</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TripCraft</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
+                        Your AI-powered travel companion for creating unforgettable journeys.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="itinerary.html">Itinerary Planner</a></li>
+                        <li><a href="budget.html">Budget Tracker</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#tutorials">Tutorials</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#feedback">Feedback</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="#facebook">Facebook</a></li>
+                        <li><a href="#twitter">Twitter</a></li>
+                        <li><a href="#instagram">Instagram</a></li>
+                        <li><a href="#linkedin">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 TripCraft AI Travel Planner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Modal functions
+        function createNewTripModal() {
+            document.getElementById('newTripModal').style.display = 'flex';
+        }
+        
+        function closeNewTripModal() {
+            document.getElementById('newTripModal').style.display = 'none';
+        }
+        
+        // Handle new trip form submission
+        document.getElementById('newTripForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const tripData = Object.fromEntries(formData);
+            
+            // Create new trip using the main.js function
+            const newTrip = window.TripCraft.createNewTrip();
+            window.TripCraft.updateTrip(newTrip.id, tripData);
+            
+            // Show success message
+            alert('Trip created successfully! Redirecting to your dashboard...');
+            
+            // Close modal and reset form
+            closeNewTripModal();
+            this.reset();
+            
+            // In a real app, you would redirect to the new trip page
+            console.log('New trip created:', tripData);
+        });
+        
+        // Close modal when clicking outside
+        document.getElementById('newTripModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeNewTripModal();
+            }
+        });
+    </script>
+</body>
+</html>

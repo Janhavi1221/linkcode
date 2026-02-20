@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Planner - TripCraft AI Travel Planner</title>
+    <meta name="description" content="Track and manage your travel budget with smart expense tracking">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✈️</text></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">✈️</div>
+                TripCraft
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li><a href="itinerary.html" class="nav-link">Itinerary</a></li>
+                <li><a href="budget.html" class="nav-link">Budget</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="#" class="btn btn-primary" onclick="addExpense()">+ Add Expense</a></li>
+            </ul>
+            
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Budget Header -->
+    <section class="dashboard-header">
+        <div class="container">
+            <div class="welcome-section">
+                <h1 class="welcome-title">Incredible India Journey Budget 💰</h1>
+                <p class="welcome-subtitle">March 15-22, 2024 • Smart expense tracking and budget optimization</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Budget Content -->
+    <main class="budget-container">
+        <div class="container">
+            <!-- Budget Overview -->
+            <section class="budget-overview">
+                <div class="budget-total">
+                    <h2 style="color: var(--text-dark); margin-bottom: 1rem;">Total Budget Overview</h2>
+                    <div class="budget-amount">$3,500</div>
+                    <p style="color: var(--text-light);">Total trip budget</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 600; color: #10b981; margin-bottom: 0.5rem;">$2,625</div>
+                        <div style="color: var(--text-light); font-size: 0.875rem;">Spent (75%)</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 600; color: var(--primary-color); margin-bottom: 0.5rem;">$875</div>
+                        <div style="color: var(--text-light); font-size: 0.875rem;">Remaining (25%)</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 600; color: #f59e0b; margin-bottom: 0.5rem;">$125/day</div>
+                        <div style="color: var(--text-light); font-size: 0.875rem;">Daily Average</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 600; color: #8b5cf6; margin-bottom: 0.5rem;">$450</div>
+                        <div style="color: var(--text-light); font-size: 0.875rem;">AI Savings</div>
+                    </div>
+                </div>
+                
+                <!-- Overall Progress Bar -->
+                <div style="margin-top: 2rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span style="font-weight: 600;">Budget Usage</span>
+                        <span style="font-weight: 600;">75%</span>
+                    </div>
+                    <div class="progress-bar" style="height: 12px;">
+                        <div class="progress-fill" style="width: 75%; background: linear-gradient(90deg, #10b981 0%, #f59e0b 75%, #ef4444 100%);"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Budget Categories -->
+            <section>
+                <h2 style="font-size: 2rem; margin-bottom: 2rem; color: var(--text-dark); text-align: center;">Budget by Category</h2>
+                <div class="budget-categories">
+                    <!-- Travel Category -->
+                    <div class="category-card">
+                        <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 100px;">
+                            <img src="https://picsum.photos/seed/india-train-journey/400/200.jpg" alt="India Train Journey" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="category-header">
+                            <div class="category-name">
+                                <span style="margin-right: 0.5rem;">✈️</span> Travel
+                            </div>
+                            <div class="category-amount">$800 / $1,000</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 80%;"></div>
+                        </div>
+                        <div class="category-percentage">80% of budget used</div>
+                        
+                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                            <div style="font-size: 0.875rem; color: var(--text-light); margin-bottom: 0.5rem;">Recent Expenses:</div>
+                            <div style="font-size: 0.875rem;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
+                                    <span>Gatimaan Express Delhi-Agra</span>
+                                    <span>$50</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
+                                    <span>Taxi to Hotel</span>
+                                    <span>$35</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Jaipur-Delhi Flight</span>
+                                    <span>$120</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stay Category -->
+                    <div class="category-card">
+                        <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 100px;">
+                            <img src="https://picsum.photos/seed/luxury-hotel-india/400/200.jpg" alt="Luxury Hotel India" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="category-header">
+                            <div class="category-name">
+                                <span style="margin-right: 0.5rem;">🏨</span> Stay
+                            </div>
+                            <div class="category-amount">$1,400 / $1,500</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 93%;"></div>
+                        </div>
+                        <div class="category-percentage">93% of budget used</div>
+                        
+                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                            <div style="font-size: 0.875rem; color: var(--text-light); margin-bottom: 0.5rem;">Recent Expenses:</div>
+                            <div style="font-size: 0.875rem;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
+                                    <span>The Imperial Delhi (3 nights)</span>
+                                    <span>$600</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Jaipur Heritage Hotel (3 nights)</span>
+                                    <span>$800</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Food Category -->
+                    <div class="category-card">
+                        <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 100px;">
+                            <img src="https://picsum.photos/seed/indian-cuisine-food/400/200.jpg" alt="Indian Cuisine" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="category-header">
+                            <div class="category-name">
+                                <span style="margin-right: 0.5rem;">🍜</span> Food
+                            </div>
+                            <div class="category-amount">$425 / $600</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 71%;"></div>
+                        </div>
+                        <div class="category-percentage">71% of budget used</div>
+                        
+                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                            <div style="font-size: 0.875rem; color: var(--text-light); margin-bottom: 0.5rem;">Recent Expenses:</div>
+                            <div style="font-size: 0.875rem;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
+                                    <span>Karim's Delhi</span>
+                                    <span>$25</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
+                                    <span>Rajasthani Thali</span>
+                                    <span>$30</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Street Food Tour</span>
+                                    <span>$20</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activities Category -->
+                    <div class="category-card">
+                        <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 100px;">
+                            <img src="https://picsum.photos/seed/taj-mahal-activities/400/200.jpg" alt="Taj Mahal Activities" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="category-header">
+                            <div class="category-name">
+                                <span style="margin-right: 0.5rem;">🎯</span> Activities
+                            </div>
+                            <div class="category-amount">$375 / $400</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 95%;"></div>
+                        </div>
+                        <div class="category-percentage">95% of budget used</div>
+                        
+                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                            <div style="font-size: 0.875rem; color: var(--text-light); margin-bottom: 0.5rem;">Recent Expenses:</div>
+                            <div style="font-size: 0.875rem;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
+                                    <span>teamLab Borderless</span>
+                                    <span>$65</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
+                                    <span>Tokyo Tower</span>
+                                    <span>$25</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Onsen Entry</span>
+                                    <span>$40</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Insights -->
+            <section style="margin-top: 3rem;">
+                <h2 style="font-size: 2rem; margin-bottom: 2rem; color: var(--text-dark); text-align: center;">AI Budget Insights</h2>
+                <div class="trip-summary-grid">
+                    <div class="card">
+                        <div class="card-icon">💡</div>
+                        <h3 class="card-title">Optimization Alert</h3>
+                        <p class="card-description">
+                            You're close to exceeding your Activities budget. Consider free alternatives 
+                            like Ueno Park museums or window shopping in Ginza.
+                        </p>
+                        <button class="btn btn-secondary" style="margin-top: 1rem; width: 100%;">View Alternatives</button>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">🎯</div>
+                        <h3 class="card-title">Saving Opportunity</h3>
+                        <p class="card-description">
+                            Book your airport transfer 48 hours in advance to save 15% on transportation costs.
+                        </p>
+                        <button class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Save Now</button>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">📊</div>
+                        <h3 class="card-title">Spending Trend</h3>
+                        <p class="card-description">
+                            Your daily spending is 12% under average. Great job! You have extra budget 
+                            for special experiences.
+                        </p>
+                        <button class="btn btn-outline" style="margin-top: 1rem; width: 100%;">View Details</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Transactions -->
+            <section style="margin-top: 3rem;">
+                <h2 style="font-size: 2rem; margin-bottom: 2rem; color: var(--text-dark);">Recent Transactions</h2>
+                <div class="card">
+                    <div style="margin-bottom: 1rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <h3 style="color: var(--text-dark);">Today, March 20</h3>
+                            <span style="color: var(--text-light); font-size: 0.875rem;">Total: $145</span>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid var(--border-color);">
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div style="width: 40px; height: 40px; background: var(--gradient-hero); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">🍜</div>
+                                <div>
+                                    <div style="font-weight: 600;">Lunch at Ichiran</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Shibuya • 1:30 PM</div>
+                                </div>
+                            </div>
+                            <div style="font-weight: 600; color: #ef4444;">-$15</div>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid var(--border-color);">
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div style="width: 40px; height: 40px; background: var(--gradient-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">🎮</div>
+                                <div>
+                                    <div style="font-weight: 600;">Arcade Games</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Akihabara • 3:00 PM</div>
+                                </div>
+                            </div>
+                            <div style="font-weight: 600; color: #ef4444;">-$30</div>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0;">
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">🍢</div>
+                                <div>
+                                    <div style="font-weight: 600;">Dinner at Omoide Yokocho</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Shinjuku • 7:00 PM</div>
+                                </div>
+                            </div>
+                            <div style="font-weight: 600; color: #ef4444;">-$100</div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <h3 style="color: var(--text-dark);">Yesterday, March 19</h3>
+                            <span style="color: var(--text-light); font-size: 0.875rem;">Total: $380</span>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid var(--border-color);">
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div style="width: 40px; height: 40px; background: var(--gradient-hero); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">🚆</div>
+                                <div>
+                                    <div style="font-weight: 600;">Shinkansen to Hakone</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Tokyo Station • 8:00 AM</div>
+                                </div>
+                            </div>
+                            <div style="font-weight: 600; color: #ef4444;">-$120</div>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0;">
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div style="width: 40px; height: 40px; background: var(--gradient-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">🏨</div>
+                                <div>
+                                    <div style="font-weight: 600;">Hakone Ryokan</div>
+                                    <div style="color: var(--text-light); font-size: 0.875rem;">Hakone • 6:00 PM</div>
+                                </div>
+                            </div>
+                            <div style="font-weight: 600; color: #ef4444;">-$260</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Add Expense Modal -->
+    <div id="addExpenseModal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: 2000; align-items: center; justify-content: center;">
+        <div class="card" style="max-width: 500px; width: 90%; max-height: 90vh; overflow-y: auto;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h2 style="color: var(--text-dark);">Add New Expense</h2>
+                <button onclick="closeAddExpenseModal()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-light);">×</button>
+            </div>
+            
+            <form id="addExpenseForm">
+                <div class="form-group">
+                    <label class="form-label">Expense Name</label>
+                    <input type="text" class="form-input" name="expenseName" placeholder="e.g., Lunch at Restaurant" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Amount ($)</label>
+                    <input type="number" class="form-input" name="amount" placeholder="e.g., 25.50" min="0" step="0.01" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Category</label>
+                    <select class="form-input" name="category" required>
+                        <option value="">Select category</option>
+                        <option value="travel">✈️ Travel</option>
+                        <option value="stay">🏨 Stay</option>
+                        <option value="food">🍜 Food</option>
+                        <option value="activities">🎯 Activities</option>
+                        <option value="shopping">🛍️ Shopping</option>
+                        <option value="other">📦 Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Date</label>
+                    <input type="date" class="form-input" name="date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Location</label>
+                    <input type="text" class="form-input" name="location" placeholder="e.g., Shibuya">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Notes</label>
+                    <textarea class="form-textarea" name="notes" placeholder="Add any additional notes..." rows="3"></textarea>
+                </div>
+                
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <button type="button" onclick="closeAddExpenseModal()" class="btn btn-secondary" style="flex: 1;">Cancel</button>
+                    <button type="submit" class="btn btn-primary" style="flex: 1;">Add Expense</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TripCraft</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
+                        Your AI-powered travel companion for creating unforgettable journeys.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="itinerary.html">Itinerary Planner</a></li>
+                        <li><a href="budget.html">Budget Tracker</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#tutorials">Tutorials</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#feedback">Feedback</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="#facebook">Facebook</a></li>
+                        <li><a href="#twitter">Twitter</a></li>
+                        <li><a href="#instagram">Instagram</a></li>
+                        <li><a href="#linkedin">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 TripCraft AI Travel Planner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Modal functions
+        function addExpense() {
+            document.getElementById('addExpenseModal').style.display = 'flex';
+            // Set today's date as default
+            document.querySelector('input[name="date"]').valueAsDate = new Date();
+        }
+        
+        function closeAddExpenseModal() {
+            document.getElementById('addExpenseModal').style.display = 'none';
+        }
+        
+        // Handle add expense form submission
+        document.getElementById('addExpenseForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const expenseData = Object.fromEntries(formData);
+            
+            // Show success message
+            alert('Expense added successfully!');
+            
+            // Close modal and reset form
+            closeAddExpenseModal();
+            this.reset();
+            
+            // In a real app, you would add this to the budget
+            console.log('New expense:', expenseData);
+        });
+        
+        // Close modal when clicking outside
+        document.getElementById('addExpenseModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeAddExpenseModal();
+            }
+        });
+        
+        // Animate progress bars on page load
+        window.addEventListener('load', function() {
+            const progressBars = document.querySelectorAll('.progress-fill');
+            progressBars.forEach((bar, index) => {
+                setTimeout(() => {
+                    bar.style.transition = 'width 1s ease-out';
+                }, index * 200);
+            });
+        });
+        
+        // Add click handlers for category cards
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.addEventListener('click', function() {
+                // In a real app, this would show detailed category breakdown
+                console.log('Category clicked:', this.querySelector('.category-name').textContent);
+            });
+        });
+    </script>
+</body>
+</html>

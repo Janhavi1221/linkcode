@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TripCraft – AI Travel Planner | Plan Smarter Trips with AI</title>
+    <meta name="description" content="Plan your perfect trip with AI-powered itineraries, budget tracking, and destination insights.">
+    <meta name="keywords" content="travel planner, AI travel, trip planning, itinerary, budget travel">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="TripCraft – AI Travel Planner">
+    <meta property="og:description" content="Plan Smarter Trips with AI">
+    <meta property="og:type" content="website">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✈️</text></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">✈️</div>
+                TripCraft
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li><a href="itinerary.html" class="nav-link">Itinerary</a></li>
+                <li><a href="budget.html" class="nav-link">Budget</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="dashboard.html" class="btn btn-primary">Get Started</a></li>
+            </ul>
+            
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <img src="assets/images/hero-landscape.svg" alt="Travel Landscape" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(37, 99, 235, 0.8), rgba(0, 0, 0, 0.6));"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content fade-in-up">
+                <h1 class="hero-title">Plan Smarter Trips with AI</h1>
+                <p class="hero-subtitle">
+                    Let artificial intelligence craft your perfect travel experience with personalized itineraries, 
+                    smart budget planning, and insider destination insights.
+                </p>
+                <div class="hero-buttons">
+                    <a href="dashboard.html" class="btn btn-primary">
+                        <span>🚀</span> Plan My Trip
+                    </a>
+                    <a href="#features" class="btn btn-secondary">
+                        <span>🌍</span> Explore Destinations
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="text-center mb-3">
+                <h2 class="hero-title" style="color: var(--text-dark); font-size: 2.5rem;">Why Choose TripCraft?</h2>
+                <p class="hero-subtitle" style="color: var(--text-light);">
+                    Experience the future of travel planning with our AI-powered features
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="card-icon">🧠</div>
+                    <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 120px;">
+                        <img src="assets/images/taj-mahal.jpg" alt="Smart Itinerary" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 class="card-title">Smart Itinerary</h3>
+                    <p class="card-description">
+                        AI analyzes your preferences, travel history, and destination insights to create 
+                        personalized day-by-day itineraries optimized for your schedule and interests.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="card-icon">💰</div>
+                    <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 120px;">
+                        <img src="assets/images/eiffel-tower.jpg" alt="Budget Control" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 class="card-title">Budget Control</h3>
+                    <p class="card-description">
+                        Track expenses in real-time, get spending alerts, and receive money-saving recommendations 
+                        to stay within your travel budget without compromising on experiences.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="card-icon">📍</div>
+                    <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 120px;">
+                        <img src="assets/images/kerala-backwaters.jpg" alt="Destination Insights" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 class="card-title">Destination Insights</h3>
+                    <p class="card-description">
+                        Access comprehensive destination guides, hidden gems, local tips, and real-time updates 
+                        about weather, events, and attractions at your chosen destination.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="card-icon">🤖</div>
+                    <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 120px;">
+                        <img src="assets/images/bali-beach.jpg" alt="AI Recommendations" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 class="card-title">AI Recommendations</h3>
+                    <p class="card-description">
+                        Get personalized recommendations for restaurants, activities, accommodations, and 
+                        transportation based on your unique travel style and preferences.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="card-icon">📱</div>
+                    <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 120px;">
+                        <img src="assets/images/taj-mahal.jpg" alt="Mobile Ready" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 class="card-title">Mobile Ready</h3>
+                    <p class="card-description">
+                        Access your travel plans anywhere, anytime. Our responsive design ensures seamless 
+                        experience across all your devices, even offline with smart caching.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="card-icon">🔒</div>
+                    <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 120px;">
+                        <img src="assets/images/eiffel-tower.jpg" alt="Secure & Private" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 class="card-title">Secure & Private</h3>
+                    <p class="card-description">
+                        Your travel data is encrypted and secure. We prioritize your privacy and never share 
+                        your personal information with third parties without consent.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="features" style="background: var(--bg-white);">
+        <div class="container">
+            <div class="text-center mb-3">
+                <h2 class="hero-title" style="color: var(--text-dark); font-size: 2.5rem;">How It Works</h2>
+                <p class="hero-subtitle" style="color: var(--text-light);">
+                    Start planning your dream trip in three simple steps
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">1️⃣</div>
+                    <h3 class="card-title">Tell Us About Your Trip</h3>
+                    <p class="card-description">
+                        Share your destination, travel dates, budget, and preferences. 
+                        Our AI listens to what matters most to you.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">2️⃣</div>
+                    <h3 class="card-title">AI Creates Your Plan</h3>
+                    <p class="card-description">
+                        Our advanced algorithms analyze thousands of data points to create 
+                        the perfect itinerary tailored just for you.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">3️⃣</div>
+                    <h3 class="card-title">Enjoy Your Journey</h3>
+                    <p class="card-description">
+                        Follow your personalized plan, make adjustments on the go, and 
+                        create unforgettable memories with confidence.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="features">
+        <div class="container">
+            <div class="text-center mb-3">
+                <h2 class="hero-title" style="color: var(--text-dark); font-size: 2.5rem;">What Travelers Say</h2>
+                <p class="hero-subtitle" style="color: var(--text-light);">
+                    Join thousands of satisfied travelers using TripCraft
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="card">
+                    <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 120px;">
+                        <img src="assets/images/bali-beach.jpg" alt="Adventure Travel" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <span style="color: #f59e0b;">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="card-description" style="font-style: italic; margin-bottom: 1rem;">
+                        "TripCraft completely transformed how I plan my vacations. The AI suggestions 
+                        were spot-on and helped me discover amazing places I would have never found on my own."
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <div style="width: 40px; height: 40px; background: var(--gradient-hero); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">S</div>
+                        <div>
+                            <div style="font-weight: 600;">Sarah Johnson</div>
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Adventure Traveler</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 120px;">
+                        <img src="assets/images/eiffel-tower.jpg" alt="Budget Europe Travel" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <span style="color: #f59e0b;">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="card-description" style="font-style: italic; margin-bottom: 1rem;">
+                        "The budget planning feature saved me over $500 on my Europe trip. I could track 
+                        every expense and got great recommendations for affordable local experiences."
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <div style="width: 40px; height: 40px; background: var(--gradient-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">M</div>
+                        <div>
+                            <div style="font-weight: 600;">Michael Chen</div>
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Budget Traveler</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 120px;">
+                        <img src="assets/images/kerala-backwaters.jpg" alt="Business Travel" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <span style="color: #f59e0b;">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="card-description" style="font-style: italic; margin-bottom: 1rem;">
+                        "As a busy professional, I don't have time to research for hours. TripCraft's 
+                        AI does all the heavy lifting and creates perfect itineraries that match my style."
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">E</div>
+                        <div>
+                            <div style="font-weight: 600;">Emily Rodriguez</div>
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Business Traveler</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Itineraries -->
+    <section style="padding: 80px 0; background: var(--background-light);">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-dark); text-align: center;">Popular Itineraries</h2>
+            <p style="color: var(--text-light); text-align: center; margin-bottom: 3rem; font-size: 1.1rem;">
+                Discover our most-loved travel experiences crafted by AI and perfected by travelers
+            </p>
+            
+            <div class="trip-summary-grid">
+                <div class="card">
+                    <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 150px;">
+                        <img src="assets/images/eiffel-tower.jpg" alt="European Grand Tour" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">European Grand Tour</h3>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">14 Days • Paris • Rome • Barcelona</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin: 1rem 0;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Budget</div>
+                            <div style="font-weight: 600;">$4,500</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Best Season</div>
+                            <div style="font-weight: 600;">May-Sep</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Explore Europe</button>
+                </div>
+
+                <div class="card">
+                    <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 150px;">
+                        <img src="assets/images/bali-beach.jpg" alt="Southeast Asia Backpack" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Southeast Asia Backpack</h3>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">21 Days • Thailand • Vietnam • Cambodia</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin: 1rem 0;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Budget</div>
+                            <div style="font-weight: 600;">$2,800</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Best Season</div>
+                            <div style="font-weight: 600;">Nov-Mar</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Explore Asia</button>
+                </div>
+
+                <div class="card">
+                    <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 150px;">
+                        <img src="assets/images/route-66.jpg" alt="USA Road Trip" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">American Road Trip</h3>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">15 Days • NYC • LA • Route 66</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin: 1rem 0;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Budget</div>
+                            <div style="font-weight: 600;">$3,900</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Best Season</div>
+                            <div style="font-weight: 600;">May-Oct</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Explore USA</button>
+                </div>
+
+                <div class="card">
+                    <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 150px;">
+                        <img src="assets/images/african-safari.jpg" alt="South Africa Safari" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">South Africa Safari</h3>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">10 Days • Kruger • Cape Town • Garden Route</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin: 1rem 0;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Budget</div>
+                            <div style="font-weight: 600;">$3,200</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Best Season</div>
+                            <div style="font-weight: 600;">May-Sep</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Explore Africa</button>
+                </div>
+
+                <div class="card">
+                    <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 150px;">
+                        <img src="assets/images/machu-picchu.jpg" alt="Peru Machu Picchu" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Peru Ancient Wonders</h3>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">8 Days • Lima • Cusco • Machu Picchu</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin: 1rem 0;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Budget</div>
+                            <div style="font-weight: 600;">$2,100</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Best Season</div>
+                            <div style="font-weight: 600;">May-Sep</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Explore Peru</button>
+                </div>
+
+                <div class="card">
+                    <div style="margin-bottom: 1rem; border-radius: 8px; overflow: hidden; height: 150px;">
+                        <img src="assets/images/queenstown-newzealand.jpg" alt="New Zealand Adventure" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">New Zealand Adventure</h3>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">12 Days • Queenstown • Milford Sound • Auckland</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin: 1rem 0;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Budget</div>
+                            <div style="font-weight: 600;">$3,600</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.875rem; color: var(--text-light);">Best Season</div>
+                            <div style="font-weight: 600;">Dec-Feb</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Explore NZ</button>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="dashboard.html" class="btn btn-secondary" style="font-size: 1.1rem; padding: 16px 32px;">
+                    <span>🗺️</span> View All Itineraries
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="hero" style="padding: 80px 0; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -1;">
+            <img src="assets/images/hero-landscape.svg" alt="Dream Travel" style="width: 100%; height: 100%; object-fit: cover;">
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(0, 0, 0, 0.7));"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content text-center">
+                <h2 class="hero-title" style="font-size: 2.5rem;">Ready to Plan Your Dream Trip?</h2>
+                <p class="hero-subtitle">
+                    Join thousands of travelers who have discovered the smarter way to plan their journeys.
+                </p>
+                <div class="hero-buttons">
+                    <a href="dashboard.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 16px 32px;">
+                        <span>🎯</span> Start Planning Now
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary" style="font-size: 1.1rem; padding: 16px 32px;">
+                        <span>💬</span> Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TripCraft</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
+                        Your AI-powered travel companion for creating unforgettable journeys. 
+                        Plan smarter, travel better, experience more.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Product</h3>
+                    <ul class="footer-links">
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="itinerary.html">Itinerary Planner</a></li>
+                        <li><a href="budget.html">Budget Tracker</a></li>
+                        <li><a href="#features">Features</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="#facebook">Facebook</a></li>
+                        <li><a href="#twitter">Twitter</a></li>
+                        <li><a href="#instagram">Instagram</a></li>
+                        <li><a href="#linkedin">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 TripCraft AI Travel Planner. All rights reserved. | 
+                    <a href="#privacy" style="color: inherit;">Privacy Policy</a> | 
+                    <a href="#terms" style="color: inherit;">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

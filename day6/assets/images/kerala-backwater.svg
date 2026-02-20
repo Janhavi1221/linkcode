@@ -1,0 +1,64 @@
+<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="water" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4682B4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E90FF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0F6FF;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky background -->
+  <rect width="400" height="100" fill="url(#sky)"/>
+  
+  <!-- Water -->
+  <rect x="0" y="100" width="400" height="100" fill="url(#water)"/>
+  
+  <!-- Houseboat -->
+  <g transform="translate(200, 120)">
+    <!-- Hull -->
+    <rect x="-40" y="10" width="80" height="20" fill="#8B4513"/>
+    <path d="M -40 10 L -30 0 L 30 0 L 40 10" fill="#A0522D"/>
+    
+    <!-- Cabin -->
+    <rect x="-25" y="-10" width="50" height="20" fill="#FFFFFF"/>
+    <rect x="-20" y="-5" width="15" height="10" fill="#87CEEB"/>
+    <rect x="5" y="-5" width="15" height="10" fill="#87CEEB"/>
+    
+    <!-- Roof -->
+    <path d="M -30 -10 L 0 -25 L 30 -10" fill="#FF6347"/>
+    
+    <!-- Palm tree on boat -->
+    <rect x="35" y="-5" width="3" height="15" fill="#8B4513"/>
+    <ellipse cx="36.5" cy="-8" rx="8" ry="3" fill="#228B22"/>
+  </g>
+  
+  <!-- Coconut trees on banks -->
+  <g transform="translate(50, 80)">
+    <rect x="-2" y="0" width="4" height="20" fill="#8B4513"/>
+    <ellipse cx="0" cy="-3" rx="15" ry="5" fill="#228B22" transform="rotate(-25 0 0)"/>
+    <ellipse cx="0" cy="-3" rx="15" ry="5" fill="#228B22" transform="rotate(25 0 0)"/>
+    <ellipse cx="0" cy="-5" rx="12" ry="4" fill="#228B22"/>
+  </g>
+  
+  <g transform="translate(350, 85)">
+    <rect x="-2" y="0" width="4" height="15" fill="#8B4513"/>
+    <ellipse cx="0" cy="-3" rx="12" ry="4" fill="#228B22" transform="rotate(-30 0 0)"/>
+    <ellipse cx="0" cy="-3" rx="12" ry="4" fill="#228B22" transform="rotate(30 0 0)"/>
+    <ellipse cx="0" cy="-5" rx="10" ry="3" fill="#228B22"/>
+  </g>
+  
+  <!-- Birds -->
+  <path d="M 100 40 Q 105 35 110 40" fill="none" stroke="#000000" stroke-width="1"/>
+  <path d="M 120 50 Q 125 45 130 50" fill="none" stroke="#000000" stroke-width="1"/>
+  <path d="M 280 30 Q 285 25 290 30" fill="none" stroke="#000000" stroke-width="1"/>
+  
+  <!-- Water ripples -->
+  <ellipse cx="200" cy="140" rx="60" ry="8" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.5"/>
+  <ellipse cx="200" cy="140" rx="80" ry="10" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.3"/>
+  
+  <!-- Text -->
+  <text x="200" y="190" text-anchor="middle" fill="#006400" font-family="Arial" font-size="12" font-weight="bold">Kerala Backwaters</text>
+</svg>

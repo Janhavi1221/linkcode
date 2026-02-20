@@ -1,0 +1,86 @@
+<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ocean" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00CED1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4682B4;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFB6C1;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="sand" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F4E4C1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D2B48C;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky background -->
+  <rect width="400" height="120" fill="url(#sky)"/>
+  
+  <!-- Ocean -->
+  <rect x="0" y="120" width="400" height="80" fill="url(#ocean)"/>
+  
+  <!-- Beach -->
+  <ellipse cx="200" cy="180" rx="200" ry="20" fill="url(#sand)"/>
+  
+  <!-- Waves -->
+  <path d="M 0 125 Q 50 120 100 125 T 200 125 T 300 125 T 400 125" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.7"/>
+  <path d="M 0 135 Q 50 130 100 135 T 200 135 T 300 135 T 400 135" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Beach shacks -->
+  <g transform="translate(100, 140)">
+    <!-- Shack 1 -->
+    <rect x="-15" y="0" width="30" height="20" fill="#8B4513"/>
+    <path d="M -20 0 L 0 -15 L 20 0" fill="#FF6347"/>
+    <rect x="-8" y="5" width="6" height="8" fill="#87CEEB"/>
+    <rect x="2" y="5" width="6" height="8" fill="#87CEEB"/>
+  </g>
+  
+  <g transform="translate(280, 145)">
+    <!-- Shack 2 -->
+    <rect x="-12" y="0" width="24" height="15" fill="#A0522D"/>
+    <path d="M -15 0 L 0 -12 L 15 0" fill="#FF8C00"/>
+    <rect x="-6" y="4" width="5" height="6" fill="#87CEEB"/>
+    <rect x="1" y="4" width="5" height="6" fill="#87CEEB"/>
+  </g>
+  
+  <!-- Palm trees -->
+  <g transform="translate(50, 130)">
+    <rect x="-2" y="0" width="4" height="25" fill="#8B4513"/>
+    <ellipse cx="0" cy="-5" rx="20" ry="8" fill="#228B22" transform="rotate(-20 0 0)"/>
+    <ellipse cx="0" cy="-5" rx="20" ry="8" fill="#228B22" transform="rotate(20 0 0)"/>
+    <ellipse cx="0" cy="-8" rx="18" ry="6" fill="#228B22"/>
+  </g>
+  
+  <g transform="translate(350, 135)">
+    <rect x="-2" y="0" width="4" height="20" fill="#8B4513"/>
+    <ellipse cx="0" cy="-5" rx="18" ry="7" fill="#228B22" transform="rotate(-25 0 0)"/>
+    <ellipse cx="0" cy="-5" rx="18" ry="7" fill="#228B22" transform="rotate(25 0 0)"/>
+    <ellipse cx="0" cy="-7" rx="15" ry="5" fill="#228B22"/>
+  </g>
+  
+  <!-- Sun -->
+  <circle cx="320" cy="40" r="25" fill="#FFD700" opacity="0.9"/>
+  
+  <!-- Beach volleyball net -->
+  <g transform="translate(200, 155)">
+    <rect x="-1" y="0" width="2" height="25" fill="#8B4513"/>
+    <rect x="-30" y="5" width="60" height="1" fill="#FFFFFF" opacity="0.8"/>
+    <rect x="-30" y="8" width="60" height="1" fill="#FFFFFF" opacity="0.8"/>
+    <rect x="-30" y="11" width="60" height="1" fill="#FFFFFF" opacity="0.8"/>
+  </g>
+  
+  <!-- People on beach -->
+  <g transform="translate(150, 165)">
+    <circle cx="0" cy="-5" r="3" fill="#F4A460"/>
+    <rect x="-2" y="-2" width="4" height="6" fill="#FF6347"/>
+  </g>
+  
+  <g transform="translate(250, 168)">
+    <circle cx="0" cy="-5" r="3" fill="#F4A460"/>
+    <rect x="-2" y="-2" width="4" height="6" fill="#4169E1"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="200" y="195" text-anchor="middle" fill="#FF6347" font-family="Arial" font-size="12" font-weight="bold">Goa Beach Paradise</text>
+</svg>
